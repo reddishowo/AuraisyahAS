@@ -200,6 +200,9 @@ footer {
 #about {
   padding: 50px 0;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about-text{
@@ -212,22 +215,20 @@ footer {
   font-size: 16px;
   line-height: 1.6;
   margin: 0px;
-  align-items: center;
-  text-align: left;
+  text-align: center; /* Center text horizontally */
   flex-direction: column;
   margin-top: 20px;
-  transform: translateX(50px);
-  /* Awal posisi elemen */
+  transform: translateY(90px);
   transition: opacity 1s ease, transform 1s ease;
 }
 
 .about-paragraph p {
-  text-align: left;
-  position: relative;
-  left: 39%;
+  margin: 10px 0;
+  width: fit-content;
 }
 
 .about-paragraph.visible {
+  width: 50%;
   opacity: 1;
   transform: translateX(0);
   /* Akhir posisi elemen */
