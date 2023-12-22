@@ -1,0 +1,337 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.warna.header {
+  background-color: #ffdab9;
+  text-align: left;
+  display: flex;
+  align-items: center; /* Add this line */
+}
+
+.warna.header i {
+  margin-right: 10px;
+  font-size: 25px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6px;
+  overflow: hidden;
+}
+
+header {
+  background-color: #ffdab9;
+  color: #fff;
+  padding: 5px 0;
+  text-align: left;
+}
+
+header h1 {
+  margin: 0;
+  display: inline-block;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  text-align: right;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer {
+  background-color: #ffdab9;
+  color: #fff;
+  text-align: center;
+  padding: 1px 1;
+}
+
+#home {
+  padding: 50px 0;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#contact {
+  padding: 50px 0;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6 ease;
+}
+
+#contact.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 1s forwards;
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #0056b3;
+}
+
+.profile-container {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.description-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.description-container h1 {
+  font-family: 'Kalam', cursive;
+  color: #333;
+  font-size: 36px;
+}
+
+.description-container p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.profile-container,
+.description-container {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.profile-container.visible,
+.description-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 1s forwards;
+}
+
+#social-media{
+  padding: 50px 0;
+  text-align: center;
+}
+
+.social-icons {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-icons i {
+  font-size: 30px;
+}
+
+.social-icons a {
+  margin: 0 15px;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-media-text {
+  margin-top: 20px;
+  color: #333;
+  font-size: 12px; /* Adjust the font size as needed */
+}
+
+.social-icons a:hover {
+  color: #d4a373;
+}
+
+.social-icons i {
+  font-style: normal;
+}
+
+#about {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.about-text{
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.about-paragraph {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0px;
+  align-items: center;
+  text-align: left;
+  flex-direction: column;
+  margin-top: 20px;
+  transform: translateX(50px);
+  /* Awal posisi elemen */
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.about-paragraph p {
+  text-align: left;
+  position: relative;
+  left: 39%;
+}
+
+.about-paragraph.visible {
+  opacity: 1;
+  transform: translateX(0);
+  /* Akhir posisi elemen */
+  animation: none;
+  /* Nonaktifkan animasi slideLeft karena sudah menggunakan transform */
+}
+
+.container.animated.visible .about-text,
+.container.animated.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: -1;
+    transform: translateX(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.social-icons .rounded-box {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.social-icons .rounded-box i {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#social-media {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 15px;
+  color: #333;
+  font-size: 24px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+.social-icons i {
+  font-style: normal;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.animated.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 2s forwards;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+html {
+  scroll-behavior: smooth;
+}

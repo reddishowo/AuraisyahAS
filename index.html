@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Pacifico&display=swap" rel="stylesheet">
+  <link href="fontawesome/css/all.css" rel="stylesheet">
+  <title>Auraisyah</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="warna header">
+        <i class="fa-solid fa-cat"></i>
+        <h2>Aura</h2>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
+          <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section id="home">
+    <div class="container animated"></div>
+    <div class="container">
+      <div class="profile-container hidden">
+        <img src="./video/her.gif" alt="Profiles" class="profile-image">
+      </div>
+      <div class="description-container hidden">
+        <h1>Auraisyah Asmoro S.</h1>
+      </div>
+    </div>
+  </section>
+  </section>
+  <section id="homepage">
+    <div class="homepage">
+      <h3></h3>
+    </div>
+  </section>
+  <section id="about">
+    <div class="container animated">
+      <div class="container">
+        <div class="about-text">
+          <h2>About Me</h2>
+          <h3>Greetings 🚀. I'm Aura 🌟, my hobbies are :</h3>
+        </div>
+        <div class="about-paragraph">
+          <p>• Watching movies</p>
+          <p>• Playing with Garfield.</p>
+          <p>• etc</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="container animated">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>You can reach out to me through the following channels:</p>
+
+        <a href="mailto:farrielarrianta@gmail.com" class="contact-button">Send Email</a>
+      </div>
+    </div>
+  </section>
+  <section id="social-media">
+    <div class="container animated">
+      <div class="container">
+        <div class="social-icons">
+          <a href="https://www.instagram.com/yourasmoro" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram fa-2x"></i> <!-- Increase the size of the Instagram icon -->
+            <p class="social-media-text">Instagram</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Auraisyah</p>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      function handleSmoothScroll(event) {
+        event.preventDefault();
+        const targetId = event.currentTarget.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+  
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+          });
+        }
+      }
+  
+      const headerLinks = document.querySelectorAll('header nav ul li a');
+  
+      headerLinks.forEach(function (link) {
+        link.addEventListener('click', handleSmoothScroll);
+      });
+  
+      function fadeInElement(element) {
+        element.style.opacity = 1;
+        element.style.transform = 'translateY(0)';
+        element.style.animation = 'fadeInUp 1s forwards';
+      }
+  
+      function isInViewport(element) {
+        var rect = element.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+      }
+  
+      function handleScroll() {
+        var profileContainer = document.querySelector('.profile-container');
+        var descriptionContainer = document.querySelector('.description-container');
+        var contactSection = document.querySelector('#contact');
+        var aboutText = document.querySelector('.about-text');
+        var aboutParagraph = document.querySelector('.about-paragraph');
+  
+        if (isInViewport(profileContainer)) {
+          profileContainer.classList.add('visible');
+        }
+  
+        if (isInViewport(descriptionContainer)) {
+          descriptionContainer.classList.add('visible');
+        }
+  
+        if (isInViewport(contactSection)) {
+          contactSection.classList.add('visible');
+        }
+  
+        if (isInViewport(aboutText)) {
+          aboutText.classList.add('visible');
+        }
+  
+        if (isInViewport(aboutParagraph)) {
+          aboutParagraph.classList.add('visible');
+        }
+  
+        // Ambil semua elemen dengan class 'animated'
+        var animatedElements = document.querySelectorAll('.animated');
+  
+        animatedElements.forEach(function (element) {
+          if (isInViewport(element)) {
+            element.classList.add('visible');
+          }
+        });
+      }
+  
+      window.addEventListener('scroll', handleScroll);
+      handleScroll();
+    });
+  </script>
+  
+
+</body>
+
+</html>
