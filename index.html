@@ -62,7 +62,6 @@
       <div class="container">
         <h2>Contact</h2>
         <p>You can reach out to me through the following channels:</p>
-
         <a href="mailto:undefined@email.com" class="contact-button">Send Email</a>
       </div>
     </div>
@@ -79,6 +78,10 @@
       </div>
     </div>
   </section>
+  <audio hidden autoplay loop>
+    <source src="./bgm/bgmusic.mp3" type="audio/mpeg">
+    Browsermu tidak mendukung tag audio
+  </audio>
   <footer>
     <section id="copyright">
     <div class="container">
@@ -121,41 +124,32 @@
           rect.right <= (window.innerWidth || document.documentElement.clientWidth)
         );
       }
-  
+
       function handleScroll() {
         var profileContainer = document.querySelector('.profile-container');
         var descriptionContainer = document.querySelector('.description-container');
         var contactSection = document.querySelector('#contact');
         var aboutText = document.querySelector('.about-text');
         var aboutParagraph = document.querySelector('.about-paragraph');
+
   
-        if (isInViewport(profileContainer)) {
-          profileContainer.classList.add('visible');
+        function addVisibleClass(element) {
+          if (!element.classList.contains('visible') && isInViewport(element)) {
+            element.classList.add('visible');
+          }
         }
   
-        if (isInViewport(descriptionContainer)) {
-          descriptionContainer.classList.add('visible');
-        }
-  
-        if (isInViewport(contactSection)) {
-          contactSection.classList.add('visible');
-        }
-  
-        if (isInViewport(aboutText)) {
-          aboutText.classList.add('visible');
-        }
-  
-        if (isInViewport(aboutParagraph)) {
-          aboutParagraph.classList.add('visible');
-        }
+        addVisibleClass(profileContainer);
+        addVisibleClass(descriptionContainer);
+        addVisibleClass(contactSection);
+        addVisibleClass(aboutText);
+        addVisibleClass(aboutParagraph);
   
         // Ambil semua elemen dengan class 'animated'
         var animatedElements = document.querySelectorAll('.animated');
   
         animatedElements.forEach(function (element) {
-          if (isInViewport(element)) {
-            element.classList.add('visible');
-          }
+          addVisibleClass(element);
         });
       }
   
@@ -163,8 +157,5 @@
       handleScroll();
     });
   </script>
-  
-
 </body>
-
 </html>
