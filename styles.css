@@ -1,11 +1,12 @@
 body {
+  background-color: #f9dcc4;
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
 }
 
 .warna.header {
-  background-color: #ffdab9;
+  background-color: #f7c59f;
   text-align: left;
   display: flex;
   align-items: center; /* Add this line */
@@ -25,7 +26,7 @@ body {
 }
 
 header {
-  background-color: #ffdab9;
+  background-color: #f7c59f;
   color: #fff;
   padding: 5px 0;
   text-align: left;
@@ -66,13 +67,13 @@ header .container {
 }
 
 footer {
-  background-color: #ffdab9;
+  background-color: #f7c59f;
   color: #fff;
   text-align: center;
   padding: 1px 1;
 }
 #copyright{
-  color: #d4a373;
+  color: #000000;
 }
 #home {
   padding: 50px 0;
@@ -127,6 +128,12 @@ footer {
   border-radius: 50%;
 }
 
+.lyrics{
+  text-align: center;
+  justify-content: left;
+  left: 50%;
+  margin-top: 15%;
+}
 .description-container {
   max-width: 600px;
   margin: 0 auto;
@@ -144,6 +151,8 @@ footer {
   color: #666;
   font-size: 16px;
   line-height: 1.6;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .profile-container,
